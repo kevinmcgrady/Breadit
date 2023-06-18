@@ -95,15 +95,17 @@ const Layout = async ({ children, params }: LayoutProps) => {
                   isSubscribed={isSubscribed}
                 />
               )}
-              <Link
-                href={`/r/${params.slug}/submit`}
-                className={buttonVariants({
-                  variant: 'outline',
-                  className: 'w-full mb-6',
-                })}
-              >
-                Create Post
-              </Link>
+              {session?.user && (
+                <Link
+                  href={`/r/${params.slug}/submit`}
+                  className={buttonVariants({
+                    variant: 'outline',
+                    className: 'w-full mb-6',
+                  })}
+                >
+                  Create Post
+                </Link>
+              )}
             </dl>
           </div>
         </div>
