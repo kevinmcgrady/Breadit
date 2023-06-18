@@ -9,16 +9,18 @@ import {
   CommandGroup,
   CommandItem,
 } from './ui/Command';
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import axios from 'axios';
 import { Prisma, Subreddit } from '@prisma/client';
 import { useRouter } from 'next/navigation';
 import { Users } from 'lucide-react';
 import debounce from 'lodash.debounce';
+import { useOnClickOutside } from '@/hooks/use-on-click-outside';
 
 const SearchBar = () => {
   const [input, setInput] = useState<string>('');
   const router = useRouter();
+  const commandRef = useRef<HTMLDivElement>(null);
 
   const {
     data: queryResults,
@@ -46,8 +48,15 @@ const SearchBar = () => {
     request();
   }, []);
 
+  useOnClickOutside(commandRef, () => {
+    setInput('');
+  });
+
   return (
-    <Command className='relative rounded-lg border max-w-lg z-50 overflow-visible'>
+    <Command
+      ref={commandRef}
+      className='relative rounded-lg border max-w-lg z-50 overflow-visible'
+    >
       <CommandInput
         value={input}
         onValueChange={(text) => {

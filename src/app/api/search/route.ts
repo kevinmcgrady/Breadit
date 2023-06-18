@@ -22,5 +22,7 @@ export async function GET(req: Request) {
     });
 
     return new Response(JSON.stringify(results));
-  } catch (error) {}
+  } catch (error) {
+    return new Response('Something went wrong', { status: 500 });
+  }
 }

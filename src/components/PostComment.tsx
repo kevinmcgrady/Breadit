@@ -80,7 +80,7 @@ const PostComment: FC<PostCommentProps> = ({
 
         <div className='ml-2 flex items-center gap-x-2'>
           <p className='text-sm font-medium text-gray-900'>
-            u/{comment.author.name}
+            u/{comment.author.username}
           </p>
           <p className='max-h-40 truncate text-xs text-zinc-500'>
             {formatTimeToNow(new Date(comment.createdAt))}
