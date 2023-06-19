@@ -8,10 +8,7 @@ import { useRouter } from 'next/navigation';
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { toast } from '@/hooks/use-toast';
-import { UsernameRequest, UsernameValidator } from '@/lib/validators/username';
-
-import { Button } from './ui/Button';
+import { Button } from '@/components/ui/Button';
 import {
   Card,
   CardContent,
@@ -19,9 +16,11 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from './ui/Card';
-import { Input } from './ui/Input';
-import { Label } from './ui/Label';
+} from '@/components/ui/Card';
+import { Input } from '@/components/ui/Input';
+import { Label } from '@/components/ui/Label';
+import { toast } from '@/hooks/use-toast';
+import { UsernameRequest, UsernameValidator } from '@/lib/validators/username';
 
 type UsernameFormProps = {
   user: Pick<User, 'id' | 'username'>;

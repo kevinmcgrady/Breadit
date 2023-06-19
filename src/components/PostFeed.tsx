@@ -6,10 +6,9 @@ import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { FC, useEffect, useRef } from 'react';
 
+import Post from '@/components/Post';
 import { INFINITE_SCROLLING_PAGINATION_RESULTS } from '@/config';
 import { ExtendedPost } from '@/types/db';
-
-import Post from './Post';
 
 type PostFeedProps = {
   initialPosts: ExtendedPost[];

@@ -8,15 +8,14 @@ import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { FC, useRef, useState } from 'react';
 
+import CommentVotes from '@/components/CommentVotes';
+import { Button } from '@/components/ui/Button';
+import { Label } from '@/components/ui/Label';
+import { Textarea } from '@/components/ui/Textarea';
+import UserAvatar from '@/components/UserAvatar';
 import { toast } from '@/hooks/use-toast';
 import { formatTimeToNow } from '@/lib/utils';
 import { CommentRequest } from '@/lib/validators/comment';
-
-import CommentVotes from './CommentVotes';
-import { Button } from './ui/Button';
-import { Label } from './ui/Label';
-import { Textarea } from './ui/Textarea';
-import UserAvatar from './UserAvatar';
 
 type ExtendedComment = Comment & {
   votes: CommentVote[];

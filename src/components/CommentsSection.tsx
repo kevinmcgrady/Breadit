@@ -1,8 +1,7 @@
+import CreateComment from '@/components/CreateComment';
+import PostComment from '@/components/PostComment';
 import { getAuthSession } from '@/lib/auth';
 import { db } from '@/lib/db';
-
-import CreateComment from './CreateComment';
-import PostComment from './PostComment';
 
 type CommentsSectionProps = {
   postId: string;

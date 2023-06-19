@@ -7,12 +7,11 @@ import axios, { AxiosError } from 'axios';
 import { ArrowBigDown, ArrowBigUp } from 'lucide-react';
 import { FC, useState } from 'react';
 
+import { Button } from '@/components/ui/Button';
 import { useCustomToast } from '@/hooks/use-custom-toast';
 import { toast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import { CommentVoteRequest } from '@/lib/validators/vote';
-
-import { Button } from './ui/Button';
 
 type PartialVote = Pick<CommentVote, 'type'>;
 

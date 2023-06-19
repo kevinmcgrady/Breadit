@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { User } from 'next-auth';
 import { FC } from 'react';
 
-import { Icons } from './Icons';
-import { Avatar, AvatarFallback } from './ui/Avatar';
+import { Icons } from '@/components/Icons';
+import { Avatar, AvatarFallback } from '@/components/ui/Avatar';
 
 interface UserAvatarProps extends AvatarProps {
   user: Pick<User, 'image' | 'name'>;

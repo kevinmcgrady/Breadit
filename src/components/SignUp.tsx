@@ -1,8 +1,7 @@
 import Link from 'next/link';
 
+import { Icons } from '@/components/Icons';
 import UserAuthForm from '@/components/UserAuthForm';
-
-import { Icons } from './Icons';
 
 const SignUp = () => {
   return (

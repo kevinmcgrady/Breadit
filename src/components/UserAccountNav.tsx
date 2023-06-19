@@ -5,7 +5,8 @@ import { User } from 'next-auth';
 import { signOut } from 'next-auth/react';
 import { FC } from 'react';
 
-import { DropdownMenu ,
+import {
+  DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
