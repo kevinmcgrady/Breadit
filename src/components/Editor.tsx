@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { usePathname, useRouter } from 'next/navigation';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import TextareaAutosize from 'react-textarea-autosize';
 import { z } from 'zod';
@@ -22,7 +22,7 @@ interface EditorProps {
   subredditId: string;
 }
 
-export const Editor: React.FC<EditorProps> = ({ subredditId }) => {
+export const Editor: FC<EditorProps> = ({ subredditId }) => {
   const {
     register,
     handleSubmit,

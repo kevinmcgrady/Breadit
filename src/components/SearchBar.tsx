@@ -8,8 +8,6 @@ import { Users } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useCallback, useRef, useState } from 'react';
 
-import { useOnClickOutside } from '@/hooks/use-on-click-outside';
-
 import {
   Command,
   CommandEmpty,
@@ -17,7 +15,8 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from './ui/Command';
+} from '@/components/ui/Command';
+import { useOnClickOutside } from '@/hooks/use-on-click-outside';
 
 const SearchBar = () => {
   const [input, setInput] = useState<string>('');

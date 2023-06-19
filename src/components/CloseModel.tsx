@@ -6,11 +6,8 @@ import { FC } from 'react';
 
 import { Button } from '@/components/ui/Button';
 
-interface CloseModalProps {}
-
-const CloseModal: FC<CloseModalProps> = ({}) => {
+const CloseModal: FC = () => {
   const router = useRouter();
-
   return (
     <Button
       variant='subtle'
