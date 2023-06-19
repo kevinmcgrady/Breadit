@@ -59,14 +59,14 @@ const CreateCommunityPage = () => {
 
   return (
     <div className='container flex items-center h-full max-w-3xl mx-auto'>
-      <div className='relative bg-white w-full h-fit p-4 rounded-lg space-y-6'>
+      <div className='relative bg-white w-full h-fit p-4 rounded-lg space-y-3'>
         <div className='flex justify-between items-center'>
           <h1 className='font-xl font-semibold'>Create a community</h1>
         </div>
-        <hr className='bg-zinc-500 h-px' />
+        <hr className='bg-zinc-500' />
         <div>
           <p className='text-lg font-medium'>Name</p>
-          <p className='text-xs pb-2'>
+          <p className='text-xs pb-5'>
             Community names containing capitalization cannot be changed
           </p>
           <div className='relative'>

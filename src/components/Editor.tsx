@@ -59,7 +59,6 @@ export const Editor: FC<EditorProps> = ({ subredditId }) => {
       });
     },
     onSuccess: () => {
-      // turn pathname /r/mycommunity/submit into /r/mycommunity
       const newPathname = pathname.split('/').slice(0, -1).join('/');
       router.push(newPathname);
 
@@ -104,7 +103,6 @@ export const Editor: FC<EditorProps> = ({ subredditId }) => {
             config: {
               uploader: {
                 async uploadByFile(file: File) {
-                  // upload to uploadthing
                   const [res] = await uploadFiles([file], 'imageUploader');
 
                   return {
