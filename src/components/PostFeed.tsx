@@ -10,6 +10,8 @@ import Post from '@/components/Post';
 import { INFINITE_SCROLLING_PAGINATION_RESULTS } from '@/config';
 import { ExtendedPost } from '@/types/db';
 
+import FeedSkeleton from './skeletons/FeedSkeleton';
+
 type PostFeedProps = {
   initialPosts: ExtendedPost[];
   subredditName?: string;
@@ -24,7 +26,7 @@ const PostFeed: FC<PostFeedProps> = ({ initialPosts, subredditName }) => {
     threshold: 1,
   });
 
-  const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
+  const { data, fetchNextPage, isFetched, isFetching } = useInfiniteQuery(
     ['infinite-query'],
     async ({ pageParam = 1 }) => {
       const query =
@@ -49,6 +51,10 @@ const PostFeed: FC<PostFeedProps> = ({ initialPosts, subredditName }) => {
   }, [entry, fetchNextPage]);
 
   const posts = data?.pages.flatMap((page) => page) ?? initialPosts;
+
+  if (isFetching && !isFetched) {
+    return <FeedSkeleton />;
+  }
 
   return (
     <ul className='flex flex-col col-span-2 space-y-6'>
