@@ -1,6 +1,8 @@
-import { getAuthSession } from '@/lib/auth';
 import { Post, Vote, VoteType } from '@prisma/client';
 import { notFound } from 'next/navigation';
+
+import { getAuthSession } from '@/lib/auth';
+
 import PostVoteClient from './PostVoteClient';
 
 type PostVoteServerProps = {

@@ -1,21 +1,23 @@
 'use client';
 
+import { Prisma, Subreddit } from '@prisma/client';
 import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import debounce from 'lodash.debounce';
+import { Users } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useCallback, useRef, useState } from 'react';
+
+import { useOnClickOutside } from '@/hooks/use-on-click-outside';
+
 import {
   Command,
-  CommandInput,
-  CommandList,
   CommandEmpty,
   CommandGroup,
+  CommandInput,
   CommandItem,
+  CommandList,
 } from './ui/Command';
-import { useCallback, useRef, useState } from 'react';
-import axios from 'axios';
-import { Prisma, Subreddit } from '@prisma/client';
-import { useRouter } from 'next/navigation';
-import { Users } from 'lucide-react';
-import debounce from 'lodash.debounce';
-import { useOnClickOutside } from '@/hooks/use-on-click-outside';
 
 const SearchBar = () => {
   const [input, setInput] = useState<string>('');
@@ -46,7 +48,7 @@ const SearchBar = () => {
 
   const debounceRequest = useCallback(() => {
     request();
-  }, []);
+  }, [request]);
 
   useOnClickOutside(commandRef, () => {
     setInput('');

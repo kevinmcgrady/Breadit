@@ -1,7 +1,8 @@
+import { notFound } from 'next/navigation';
+
 import { Editor } from '@/components/Editor';
 import { Button } from '@/components/ui/Button';
 import { db } from '@/lib/db';
-import { notFound } from 'next/navigation';
 
 type PageProps = {
   params: {
@@ -9,7 +10,7 @@ type PageProps = {
   };
 };
 
-const page = async ({ params }: PageProps) => {
+const SubmitPostPage = async ({ params }: PageProps) => {
   const subreddit = await db.subreddit.findFirst({
     where: {
       name: params.slug,
@@ -42,4 +43,4 @@ const page = async ({ params }: PageProps) => {
   );
 };
 
-export default page;
+export default SubmitPostPage;

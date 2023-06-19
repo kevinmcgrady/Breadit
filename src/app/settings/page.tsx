@@ -1,13 +1,14 @@
+import { notFound } from 'next/navigation';
+
 import UsernameForm from '@/components/UsernameForm';
 import { getAuthSession } from '@/lib/auth';
-import { notFound } from 'next/navigation';
 
 export const metadata = {
   title: 'Breadit - Settings',
   description: 'Manage account and website settings',
 };
 
-const page = async () => {
+const SessingsPage = async () => {
   const session = await getAuthSession();
 
   if (!session?.user) {
@@ -31,4 +32,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default SessingsPage;

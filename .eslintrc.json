@@ -1,7 +1,16 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:import/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "plugins": ["simple-import-sort", "jsx-a11y"],
   "rules": {
-    "no-console": ["warn"],
-    "no-unused-vars": ["warn"]
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "react/no-unknown-property": "off"
+    // "no-unused-vars": "off"
   }
 }

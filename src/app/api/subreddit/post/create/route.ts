@@ -1,7 +1,8 @@
+import { z } from 'zod';
+
 import { getAuthSession } from '@/lib/auth';
 import { db } from '@/lib/db';
 import { PostValidator } from '@/lib/validators/post';
-import { z } from 'zod';
 
 export async function POST(req: Request) {
   try {

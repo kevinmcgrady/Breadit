@@ -1,3 +1,8 @@
+import { Post, User, Vote } from '@prisma/client';
+import { ArrowBigDown, ArrowBigUp, Loader2 } from 'lucide-react';
+import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
+
 import CommentsSection from '@/components/CommentsSection';
 import EditorOutput from '@/components/EditorOutput';
 import PostVoteServer from '@/components/post-vote/PostVoteServer';
@@ -6,10 +11,6 @@ import { db } from '@/lib/db';
 import { redis } from '@/lib/redis';
 import { formatTimeToNow } from '@/lib/utils';
 import { CachedPost } from '@/types/redis';
-import { Post, User, Vote } from '@prisma/client';
-import { ArrowBigDown, ArrowBigUp, Loader2 } from 'lucide-react';
-import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
 
 type PageProps = {
   params: {
@@ -20,7 +21,7 @@ type PageProps = {
 export const dynamic = 'force-dynamic';
 export const fetchCache = 'force-no-store';
 
-const page = async ({ params }: PageProps) => {
+const SinglePostPage = async ({ params }: PageProps) => {
   const cachedPost = (await redis.hgetall(
     `post:${params.postId}`,
   )) as CachedPost;
@@ -105,4 +106,4 @@ function PostVoteShell() {
   );
 }
 
-export default page;
+export default SinglePostPage;

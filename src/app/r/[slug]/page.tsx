@@ -1,9 +1,10 @@
+import { notFound } from 'next/navigation';
+
 import MiniCreatePost from '@/components/MiniCreatePost';
 import PostFeed from '@/components/PostFeed';
 import { INFINITE_SCROLLING_PAGINATION_RESULTS } from '@/config';
 import { getAuthSession } from '@/lib/auth';
 import { db } from '@/lib/db';
-import { notFound } from 'next/navigation';
 
 type PageProps = {
   params: {
@@ -11,7 +12,7 @@ type PageProps = {
   };
 };
 
-const page = async ({ params }: PageProps) => {
+const CommunitiesPage = async ({ params }: PageProps) => {
   const { slug } = params;
   const session = await getAuthSession();
 
@@ -50,4 +51,4 @@ const page = async ({ params }: PageProps) => {
   );
 };
 
-export default page;
+export default CommunitiesPage;

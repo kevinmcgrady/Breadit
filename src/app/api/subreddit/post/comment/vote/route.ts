@@ -1,7 +1,8 @@
+import { z } from 'zod';
+
 import { getAuthSession } from '@/lib/auth';
 import { db } from '@/lib/db';
 import { CommentVoteValidator } from '@/lib/validators/vote';
-import { z } from 'zod';
 
 export async function PATCH(req: Request) {
   try {

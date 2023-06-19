@@ -1,7 +1,8 @@
 import { getAuthSession } from '@/lib/auth';
 import { db } from '@/lib/db';
-import PostComment from './PostComment';
+
 import CreateComment from './CreateComment';
+import PostComment from './PostComment';
 
 type CommentsSectionProps = {
   postId: string;

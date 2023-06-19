@@ -1,14 +1,13 @@
-import GeneralFeed from '@/components/GeneralFeed';
+import { HomeIcon } from 'lucide-react';
+import Link from 'next/link';
+
 import CustomFeed from '@/components/CustomFeed';
+import GeneralFeed from '@/components/GeneralFeed';
 import { buttonVariants } from '@/components/ui/Button';
 import { getAuthSession } from '@/lib/auth';
-import { HomeIcon, Loader2 } from 'lucide-react';
-import Link from 'next/link';
-import { Suspense } from 'react';
 
-export default async function Home() {
+const Homepage = async () => {
   const session = await getAuthSession();
-
   return (
     <>
       <h1 className='font-bold text-3xl md:text-4xl'>Your Feed</h1>
@@ -40,4 +39,6 @@ export default async function Home() {
       </div>
     </>
   );
-}
+};
+
+export default Homepage;

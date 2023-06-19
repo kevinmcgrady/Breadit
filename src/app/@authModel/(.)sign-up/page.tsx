@@ -1,8 +1,9 @@
-import CloseModal from '@/components/CloseModel';
-import SignUp from '@/components/SignUp';
 import { FC } from 'react';
 
-const page: FC = () => {
+import CloseModal from '@/components/CloseModel';
+import SignUp from '@/components/SignUp';
+
+const SignUpModel: FC = () => {
   return (
     <div className='fixed inset-0 bg-zinc-900/20 z-10'>
       <div className='container flex items-center h-full max-w-lg mx-auto'>
@@ -17,4 +18,4 @@ const page: FC = () => {
   );
 };
 
-export default page;
+export default SignUpModel;

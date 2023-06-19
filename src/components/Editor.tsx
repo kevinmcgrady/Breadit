@@ -1,7 +1,11 @@
 'use client';
 
+import '@/styles/editor.css';
+
 import EditorJS from '@editorjs/editorjs';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
 import { usePathname, useRouter } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -11,10 +15,6 @@ import { z } from 'zod';
 import { toast } from '@/hooks/use-toast';
 import { uploadFiles } from '@/lib/uploadthing';
 import { PostCreationRequest, PostValidator } from '@/lib/validators/post';
-import { useMutation } from '@tanstack/react-query';
-import axios from 'axios';
-
-import '@/styles/editor.css';
 
 type FormData = z.infer<typeof PostValidator>;
 
