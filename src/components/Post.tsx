@@ -1,11 +1,11 @@
 import { Post, User, Vote } from '@prisma/client';
 import { MessageSquare } from 'lucide-react';
+import Link from 'next/link';
 import { FC, Fragment, useRef } from 'react';
 
 import EditorOutput from '@/components/EditorOutput';
 import PostVoteClient from '@/components/post-vote/PostVoteClient';
 import { formatTimeToNow } from '@/lib/utils';
-import Link from 'next/link';
 
 type PartialVote = Pick<Vote, 'type'>;
 

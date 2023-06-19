@@ -1,11 +1,11 @@
 import { HomeIcon } from 'lucide-react';
 import Link from 'next/link';
+import { Fragment } from 'react';
 
 import CustomFeed from '@/components/CustomFeed';
 import GeneralFeed from '@/components/GeneralFeed';
 import { buttonVariants } from '@/components/ui/Button';
 import { getAuthSession } from '@/lib/auth';
-import { Fragment } from 'react';
 
 const Homepage = async () => {
   const session = await getAuthSession();
